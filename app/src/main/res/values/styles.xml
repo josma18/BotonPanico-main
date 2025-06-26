@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TituloPrincipal">
+        <item name="android:textSize">@dimen/texto_titulo</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Spinner">
+        <item name="android:textSize">@dimen/texto_normal</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:textSize">@dimen/texto_normal</item>
+    </style>
+
+    <style name="BotonSOSPrincipal">
+        <item name="android:backgroundTint">@drawable/btn_principal_sos</item>
+    </style>
+
+</resources>
