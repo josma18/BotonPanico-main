@@ -18,7 +18,7 @@ public class UsuarioRepository {
                     callback.onFailure();
                     return;
                 }
-                // Convertir el response String en el objeto BaseResponse<Incidencia>
+                // Convertir el response String en el objeto BaseResponse<Usuario>
                 BaseResponse<Usuario> baseResponse = new Gson().fromJson(response, TypeToken.getParameterized(BaseResponse.class, Usuario.class).getType());
                 if(baseResponse == null){
                     callback.onFailure();

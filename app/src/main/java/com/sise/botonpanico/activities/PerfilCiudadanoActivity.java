@@ -11,16 +11,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.sise.botonpanico.MainActivity;
 import com.sise.botonpanico.R;
 import com.sise.botonpanico.adapters.TipoDocumentoSpinnerAdapter;
 import com.sise.botonpanico.dto.TipoDocumento;
+import com.sise.botonpanico.entities.TipoIncidencia;
 import com.sise.botonpanico.entities.Usuario;
 import com.sise.botonpanico.shared.Data;
+import com.sise.botonpanico.viewmodel.IncidenciaViewModel;
+import com.sise.botonpanico.viewmodel.UsuarioViewModel;
 
 public class PerfilCiudadanoActivity extends AppCompatActivity {
 
+    private UsuarioViewModel usuarioViewModel;
     private final String TAG = PerfilCiudadanoActivity.class.getSimpleName();
     private Spinner spTipoDocumentos;
     private EditText etNumeroDocumento;
@@ -38,6 +43,9 @@ public class PerfilCiudadanoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_perfil_ciudadano);
+
+        usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -67,6 +75,8 @@ public class PerfilCiudadanoActivity extends AppCompatActivity {
         usuario.setCelular(etCelular.getText().toString());
         usuario.setCorreo(etCorreo.getText().toString());
         usuario.setDireccion(etDireccion.getText().toString());
+        usuarioViewModel.insertarUsuario(usuario);
+
 
     }
 
