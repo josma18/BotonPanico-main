@@ -64,6 +64,7 @@ public class InicioActivity extends AppCompatActivity {
 
         TipoIncidencia tipoIncidencia = new TipoIncidencia();
         tipoIncidencia.setIdTipoIncidencia(1);
+
         incidencia.setTipoIncidencia(tipoIncidencia);
         incidenciaViewModel.insertarIncidencia(incidencia);
     }

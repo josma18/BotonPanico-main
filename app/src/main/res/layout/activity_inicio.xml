@@ -11,16 +11,17 @@
         android:id="@+id/actini_btn_sos"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:background="@drawable/btn_principal_sos"
+        android:onClick="onClickSOSPrincipal"
         android:text="@string/actini_btn_sos"
         android:textSize="@dimen/texto_supertitulo"
         app:backgroundTint="@null"
-        android:onClick="onClickSOSPrincipal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/actini_btn_otro"
-        android:background="@drawable/btn_principal_sos"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496" />
 
     <Button
         android:id="@+id/actini_btn_aux1"
